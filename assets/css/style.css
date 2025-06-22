@@ -1,1 +1,10 @@
-/* Style dasar untuk simulasi kredit mobil */ 
+/* Style dasar untuk simulasi kredit mobil */
+body {
+  background: #f8f9fa;
+}
+.card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+#startScreen h1 {
+  color: #198754;
+} 
