@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FormSimulasi from './FormSimulasi';
 import HasilSimulasi from './HasilSimulasi';
 import JadwalAngsuran from './JadwalAngsuran';
-import './App.css';
+import { Box, Typography, Container } from '@mui/material';
 
 function hitungSimulasi(form) {
   const otr = parseInt(form.otr);
@@ -58,11 +58,18 @@ function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f4f6fb', padding: '32px 0' }}>
-      <FormSimulasi onSubmit={handleFormSubmit} />
-      <HasilSimulasi hasil={hasil} />
-      <JadwalAngsuran jadwal={jadwal} />
-    </div>
+    <Box sx={{ minHeight: '100vh', background: '#f4f6fb', py: 4 }}>
+      <Container maxWidth="sm">
+        <Typography variant="h4" align="center" fontWeight={700} color="#2d7ff9" mb={3} letterSpacing={-1}>
+          Simulasi Kredit Mobil
+        </Typography>
+        <FormSimulasi onSubmit={handleFormSubmit} />
+        <Box mt={3} />
+        <HasilSimulasi hasil={hasil} />
+        <Box mt={3} />
+        <JadwalAngsuran jadwal={jadwal} />
+      </Container>
+    </Box>
   );
 }
 

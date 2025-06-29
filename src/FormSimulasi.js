@@ -23,9 +23,9 @@ export default function FormSimulasi({ onSubmit }) {
   };
 
   return (
-    <Card sx={{ mb: 3 }}>
-      <CardHeader title="Input Data Kredit" sx={{ color: '#2d7ff9', fontWeight: 600 }} />
-      <CardContent>
+    <Card sx={{ mb: 3, borderRadius: 3, boxShadow: 2 }}>
+      <CardHeader title="Input Data Kredit" sx={{ color: '#2d7ff9', fontWeight: 600, pb: 0 }} />
+      <CardContent sx={{ pt: 1, pb: 2 }}>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -36,7 +36,7 @@ export default function FormSimulasi({ onSubmit }) {
                 onChange={handleChange}
                 fullWidth
                 required
-                margin="normal"
+                margin="dense"
               />
               <TextField
                 label="CLIENT NAME"
@@ -45,7 +45,7 @@ export default function FormSimulasi({ onSubmit }) {
                 onChange={handleChange}
                 fullWidth
                 required
-                margin="normal"
+                margin="dense"
               />
               <TextField
                 label="Harga Mobil (OTR)"
@@ -55,7 +55,7 @@ export default function FormSimulasi({ onSubmit }) {
                 onChange={handleChange}
                 fullWidth
                 required
-                margin="normal"
+                margin="dense"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -67,7 +67,7 @@ export default function FormSimulasi({ onSubmit }) {
                 onChange={handleChange}
                 fullWidth
                 required
-                margin="normal"
+                margin="dense"
               />
               <TextField
                 label="Jangka Waktu (bulan)"
@@ -77,7 +77,7 @@ export default function FormSimulasi({ onSubmit }) {
                 onChange={handleChange}
                 fullWidth
                 required
-                margin="normal"
+                margin="dense"
               />
               <TextField
                 label="Tanggal Mulai Angsuran"
@@ -87,7 +87,7 @@ export default function FormSimulasi({ onSubmit }) {
                 onChange={handleChange}
                 fullWidth
                 required
-                margin="normal"
+                margin="dense"
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
@@ -96,8 +96,7 @@ export default function FormSimulasi({ onSubmit }) {
             type="submit"
             variant="contained"
             color="primary"
-            sx={{ mt: 3, px: 4, py: 1.5, fontWeight: 600, fontSize: '1.1rem', borderRadius: 2 }}
-            fullWidth
+            sx={{ mt: 3, px: 4, py: 1.5, fontWeight: 600, fontSize: '1.1rem', borderRadius: 2, display: { xs: 'block', sm: 'inline-block' }, width: { xs: '100%', sm: 'auto' } }}
           >
             Hitung Angsuran
           </Button>
