@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormSimulasi from './FormSimulasi';
 import HasilSimulasi from './HasilSimulasi';
 import JadwalAngsuran from './JadwalAngsuran';
+import StartMenu from './StartMenu';
 import { Box, Typography, Container } from '@mui/material';
 
 function hitungSimulasi(form) {
@@ -48,6 +49,7 @@ function buatJadwal(hasil) {
 }
 
 function App() {
+  const [started, setStarted] = useState(false);
   const [hasil, setHasil] = useState(null);
   const [jadwal, setJadwal] = useState([]);
 
@@ -56,6 +58,10 @@ function App() {
     setHasil(hasilSimulasi);
     setJadwal(buatJadwal(hasilSimulasi));
   };
+
+  if (!started) {
+    return <StartMenu onStart={() => setStarted(true)} />;
+  }
 
   return (
     <Box sx={{ minHeight: '100vh', background: '#f4f6fb', py: 4 }}>
