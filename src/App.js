@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
+import FormSimulasi from './FormSimulasi';
 import './App.css';
 
 function App() {
+  const handleFormSubmit = (data) => {
+    console.log('Data form:', data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ minHeight: '100vh', background: '#f4f6fb', padding: '32px 0' }}>
+      <FormSimulasi onSubmit={handleFormSubmit} />
     </div>
   );
 }
